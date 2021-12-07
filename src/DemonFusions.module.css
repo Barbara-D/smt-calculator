@@ -5,7 +5,7 @@
 }
 
 .fusionCombinations {
-  width: 45%;
+  width: 100%;
   margin: auto;
 }
 
@@ -16,28 +16,30 @@
 
 .fusionCombinationsTable {
   border: 2px solid black;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 5px 5px;
 }
 
 .fusionRow {
-  border-top: 1px solid blue;
-}
-
-.fusionRow:nth-child(even) {
+  /* border-top: 1px solid blue; */
   background-color: #ccc;
+  padding-top: 10px;
+  
 }
 
-.fusionRow:nth-child(odd) {
-  background-color: #fff;
-}
 
-.fusionCombinationsCell,
-.fusionCombinationsHeader {
-  border-right: 1px dotted blue;
-  padding-right: 20px;
+
+.fusionCombinationsCell{
+  /* border-right: 1px dotted blue; */
+  padding: 8px 10px;
   text-align: start;
+  border-radius: 2px ;
 }
 
 .fusionCombinationsHeader {
   background-color: grey;
+  text-align: center;
+}
+
+.demonCell{
 }

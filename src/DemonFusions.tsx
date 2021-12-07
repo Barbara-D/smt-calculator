@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { TextField } from "@mui/material";
@@ -56,9 +56,21 @@ export function DemonFusions(props: DemonFusionsProps) {
             <tr key="fusionHeader">
               {[...Array.from(Array(maxComponents).keys())].map((i) => {
                 return (
-                  <th className={styles.fusionCombinationsHeader}>
+                  <th colSpan={3} className={styles.fusionCombinationsHeader}>
                     Component {i + 1}
                   </th>
+                );
+              })}
+            </tr>
+            <tr key="fusionHeader">
+              {[...Array.from(Array(maxComponents).keys())].map((i) => {
+                return (
+                  <Fragment>
+                  <td>Level</td>
+                  <td>Race</td>
+                  <td>Demon</td>
+
+                </Fragment>
                 );
               })}
             </tr>
@@ -73,11 +85,16 @@ export function DemonFusions(props: DemonFusionsProps) {
                   {/* Redo key */}
                   {c.map((component) => {
                     return (
-                      <td className={styles.fusionCombinationsCell}>
+                      <Fragment >
+                        <td className={styles.fusionCombinationsCell}>{component.level}</td>
+                        <td className={styles.fusionCombinationsCell}>{component.race}</td>
+                      <td className={styles.fusionCombinationsCell+' '+styles.demonCell}>
                         <Link
                           to={`/${component.name.toLowerCase()}`}
-                        >{`LV${component.level} ${component.race} ${component.name}`}</Link>
+                        >{`${component.name}`}</Link>
                       </td>
+                      </Fragment>
+
                     );
                   })}
                 </tr>
